@@ -2,8 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   output: 'export',
-  basePath: '',
-  assetPrefix: '',
+  basePath: '/sem-crise',
+  assetPrefix: '/sem-crise/',
   trailingSlash: true,
 };
 

@@ -694,3 +694,396 @@ button {
   text-align: center;
   padding: 16px 0;
 }
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  /* NAV */
+  .nav {
+    padding: 0 20px;
+    height: 60px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  .nav-cta {
+    padding: 7px 18px;
+    font-size: 12px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 80px 20px 60px;
+    min-height: auto;
+  }
+
+  .hero-h1 {
+    font-size: clamp(32px, 8vw, 48px);
+  }
+
+  .hero-sub {
+    font-size: clamp(14px, 3vw, 16px);
+    margin: 20px 0 28px;
+  }
+
+  .hero-btns {
+    gap: 8px;
+  }
+
+  .btn-primary,
+  .btn-ghost {
+    padding: 11px 20px;
+    font-size: 14px;
+  }
+
+  .hero-stats {
+    margin-top: 48px;
+    padding-top: 24px;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .stat-num {
+    font-size: 24px;
+  }
+
+  /* MÉTODO */
+  .method {
+    padding: 64px 20px;
+  }
+
+  .method-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .method-text .section-h2 {
+    max-width: 100%;
+  }
+
+  .method-text p {
+    max-width: 100%;
+  }
+
+  /* PRODUTOS */
+  .products {
+    padding: 64px 20px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .product-card {
+    padding: 20px 16px;
+  }
+
+  .product-title {
+    font-size: 16px;
+  }
+
+  .product-body {
+    font-size: 12px;
+  }
+
+  .product-price {
+    font-size: 18px;
+  }
+
+  /* ISCA */
+  .isca {
+    padding: 64px 20px;
+  }
+
+  .isca-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .isca .section-h2 {
+    max-width: 100%;
+  }
+
+  .isca p {
+    max-width: 100%;
+  }
+
+  .isca-form {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .isca-input {
+    min-width: 100%;
+  }
+
+  .isca-item {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .isca-item-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .isca-item-title {
+    font-size: 12px;
+  }
+
+  .isca-item-desc {
+    font-size: 11px;
+  }
+
+  /* TESTIMONIAL */
+  .testimonial {
+    padding: 64px 20px;
+  }
+
+  .testimonial blockquote {
+    font-size: clamp(18px, 5vw, 24px);
+    margin-bottom: 20px;
+  }
+
+  /* NEWSLETTER */
+  .newsletter {
+    padding: 64px 20px;
+  }
+
+  .newsletter-inner {
+    max-width: 100%;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .newsletter-input {
+    width: 100%;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 32px 20px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .footer-copy {
+    width: 100%;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* NAV */
+  .nav {
+    padding: 0 16px;
+  }
+
+  .nav-logo-text {
+    font-size: 16px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-link {
+    display: none;
+  }
+
+  .nav-cta {
+    padding: 6px 14px;
+    font-size: 11px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 60px 16px 48px;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 20px;
+  }
+
+  .hero-h1 {
+    font-size: clamp(28px, 7vw, 40px);
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    margin: 16px 0 24px;
+  }
+
+  .btn-primary,
+  .btn-ghost {
+    padding: 10px 18px;
+    font-size: 13px;
+    width: 100%;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+  }
+
+  .hero-stats {
+    margin-top: 36px;
+    padding-top: 20px;
+    gap: 24px;
+  }
+
+  .stat-num {
+    font-size: 20px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+  }
+
+  /* SECTIONS */
+  .method,
+  .products,
+  .isca,
+  .testimonial,
+  .newsletter {
+    padding: 48px 16px;
+  }
+
+  .section-eyebrow {
+    font-size: 10px;
+  }
+
+  .section-h2 {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+
+  .method-text p,
+  .products-sub,
+  .isca p,
+  .newsletter p {
+    font-size: 14px;
+  }
+
+  .product-card {
+    padding: 16px 12px;
+  }
+
+  .product-tag {
+    font-size: 9px;
+    padding: 2px 8px;
+  }
+
+  .product-title {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .product-body {
+    font-size: 11px;
+    margin-bottom: 16px;
+  }
+
+  .product-price {
+    font-size: 16px;
+  }
+
+  .product-price span {
+    font-size: 11px;
+  }
+
+  /* ISCA */
+  .isca-inner {
+    gap: 32px;
+  }
+
+  .isca-form {
+    width: 100%;
+  }
+
+  .isca-input {
+    font-size: 13px;
+    padding: 10px 16px;
+  }
+
+  .isca-item {
+    padding: 10px 12px;
+  }
+
+  .isca-item-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .isca-item-title {
+    font-size: 11px;
+  }
+
+  .isca-item-desc {
+    font-size: 10px;
+  }
+
+  /* TESTIMONIAL */
+  .testimonial blockquote {
+    font-size: clamp(16px, 5vw, 20px);
+    margin-bottom: 16px;
+  }
+
+  .testimonial cite {
+    font-size: 12px;
+  }
+
+  /* NEWSLETTER */
+  .newsletter-form {
+    width: 100%;
+  }
+
+  .newsletter-input {
+    font-size: 13px;
+    padding: 10px 16px;
+  }
+
+  .newsletter-note {
+    font-size: 10px;
+    margin-top: 10px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 24px 16px;
+  }
+
+  .footer-logo-text {
+    font-size: 14px;
+  }
+
+  .footer-link {
+    font-size: 12px;
+  }
+
+  .footer-copy {
+    font-size: 11px;
+  }
+}
