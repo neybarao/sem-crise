@@ -56,7 +56,7 @@ export const Produtos: React.FC = () => {
             <p className="product-body">Você preenche um questionário detalhado e recebe um plano de gestão de crise personalizado para sua empresa em até 7 dias úteis.</p>
             <div className="product-price">R$ 1.497 <span>entrega em 7 dias</span></div>
           </div>
-          <div className="product-card">
+          <div className="product-card" style={{ gridColumn: 'span 2' }}>
             <span className="product-tag tag-prem">Premium</span>
             <h3 className="product-title">Clube Sem Crise</h3>
             <p className="product-body" style={{ maxWidth: '600px' }}>Comunidade fechada para assessores e profissionais de comunicação. 2 materiais novos por mês + análise de caso recente do noticiário + acesso ao arquivo completo.</p>
