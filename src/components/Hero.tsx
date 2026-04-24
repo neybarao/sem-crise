@@ -2,56 +2,48 @@ import React from 'react';
 
 export const Hero: React.FC = () => {
   return (
-    <section id="hero" className="bg-off-white min-h-screen flex flex-col justify-center px-6 sm:px-12 md:px-20 py-24 md:py-32">
-      <div className="max-w-4xl">
-        {/* Eyebrow */}
-        <p className="text-sm md:text-base font-semibold text-laranja mb-6 tracking-wide uppercase">
-          Assessoria de Crise
-        </p>
+    <section className="hero" id="hero">
+      <div className="hero-motif">
+        <svg width="680" height="680" viewBox="0 0 680 680" fill="none">
+          <defs>
+            <linearGradient id="hg1" x1="340" y1="180" x2="340" y2="480" gradientUnits="userSpaceOnUse"><stop stopColor="#EB3F00"/><stop offset="1" stopColor="#EB3F00" stopOpacity="0"/></linearGradient>
+            <linearGradient id="hg2" x1="340" y1="100" x2="340" y2="480" gradientUnits="userSpaceOnUse"><stop stopColor="#EB3F00"/><stop offset="1" stopColor="#EB3F00" stopOpacity="0"/></linearGradient>
+            <linearGradient id="hg3" x1="340" y1="20" x2="340" y2="480" gradientUnits="userSpaceOnUse"><stop stopColor="#EB3F00"/><stop offset="1" stopColor="#EB3F00" stopOpacity="0"/></linearGradient>
+            <linearGradient id="hg4" x1="340" y1="-40" x2="340" y2="480" gradientUnits="userSpaceOnUse"><stop stopColor="#EB3F00"/><stop offset="1" stopColor="#EB3F00" stopOpacity="0"/></linearGradient>
+          </defs>
+          <circle cx="340" cy="340" r="80"  stroke="url(#hg1)" strokeWidth="1.2"/>
+          <circle cx="340" cy="340" r="140" stroke="url(#hg2)" strokeWidth="1.2"/>
+          <circle cx="340" cy="340" r="210" stroke="url(#hg3)" strokeWidth="1.2"/>
+          <circle cx="340" cy="340" r="290" stroke="url(#hg4)" strokeWidth="1.2"/>
+          <circle cx="340" cy="340" r="18" fill="#EB3F00"/>
+        </svg>
+      </div>
 
-        {/* Main Headline - Ultra Bold */}
-        <h1 className="font-display font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-navy leading-tight mb-8 md:mb-10">
-          A crise é<br className="hidden sm:block" />
-          inevitável.
+      <div style={{ position: 'relative', maxWidth: '760px' }}>
+        <p className="hero-eyebrow">Assessoria de Comunicação de Crise</p>
+        <h1 className="hero-h1">
+          A crise é inevitável.<br/>
+          <span className="dim">O estrago, não.</span>
         </h1>
-
-        {/* Subheading - Lighter */}
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-navy text-opacity-40 font-light mb-8 md:mb-12 leading-snug">
-          O estrago, não.
-        </h2>
-
-        {/* Description */}
-        <p className="text-lg md:text-xl text-navy text-opacity-70 leading-relaxed mb-12 md:mb-16 max-w-2xl font-light">
+        <p className="hero-sub">
           Estratégia, velocidade e controle de narrativa para proteger sua imagem quando mais importa. Feito por quem já esteve na sala de guerra.
         </p>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4">
-          <a href="#gratuitos">
-            <button className="px-8 py-4 md:px-10 md:py-5 bg-laranja text-off-white font-semibold hover:bg-laranja-hover transition-colors duration-200 rounded">
-              Receber materiais gratuitos
-            </button>
-          </a>
-          <a href="#metodo">
-            <button className="px-8 py-4 md:px-10 md:py-5 border-2 border-navy text-navy font-semibold hover:bg-navy hover:text-off-white transition-colors duration-200 rounded">
-              Conhecer o método
-            </button>
-          </a>
+        <div className="hero-btns">
+          <a href="#gratuitos" className="btn-primary">Receber material gratuito</a>
+          <a href="#metodo" className="btn-ghost">Conhecer o método</a>
         </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-3 gap-8 md:gap-16 mt-20 md:mt-24 pt-12 md:pt-16 border-t border-navy border-opacity-10">
+        <div className="hero-stats">
           <div>
-            <div className="text-4xl md:text-5xl font-bold text-laranja mb-2">+200</div>
-            <p className="text-sm text-navy text-opacity-60">Crises gerenciadas</p>
+            <div className="stat-num">+200</div>
+            <div className="stat-label">Crises gerenciadas</div>
           </div>
           <div>
-            <div className="text-4xl md:text-5xl font-bold text-laranja mb-2">24h</div>
-            <p className="text-sm text-navy text-opacity-60">Disponibilidade total</p>
+            <div className="stat-num">24h</div>
+            <div className="stat-label">Disponibilidade total</div>
           </div>
           <div>
-            <div className="text-4xl md:text-5xl font-bold text-laranja mb-2">98%</div>
-            <p className="text-sm text-navy text-opacity-60">Reputações preservadas</p>
+            <div className="stat-num">98%</div>
+            <div className="stat-label">Reputações preservadas</div>
           </div>
         </div>
       </div>
