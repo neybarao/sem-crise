@@ -768,6 +768,17 @@ button {
 
   .method-text p {
     max-width: 100%;
+    font-size: 15px;
+  }
+
+  .step-title {
+    font-size: 17px;
+    line-height: 1.4;
+  }
+
+  .step-body {
+    font-size: 14px;
+    line-height: 1.6;
   }
 
   /* PRODUTOS */
@@ -777,23 +788,30 @@ button {
 
   .products-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 16px;
+  }
+
+  .products-sub {
+    font-size: 15px;
+    line-height: 1.6;
   }
 
   .product-card {
-    padding: 20px 16px;
+    padding: 24px 20px;
   }
 
   .product-title {
-    font-size: 16px;
+    font-size: 17px;
+    line-height: 1.4;
   }
 
   .product-body {
-    font-size: 12px;
+    font-size: 14px;
+    line-height: 1.6;
   }
 
   .product-price {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   /* ISCA */
@@ -812,6 +830,8 @@ button {
 
   .isca p {
     max-width: 100%;
+    font-size: 15px;
+    line-height: 1.6;
   }
 
   .isca-form {
@@ -824,22 +844,26 @@ button {
   }
 
   .isca-item {
-    padding: 12px 14px;
-    gap: 10px;
+    padding: 14px 16px;
+    gap: 12px;
   }
 
   .isca-item-icon {
     width: 32px;
     height: 32px;
     font-size: 14px;
+    flex-shrink: 0;
   }
 
   .isca-item-title {
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
   }
 
   .isca-item-desc {
-    font-size: 11px;
+    font-size: 12px;
+    line-height: 1.5;
   }
 
   /* TESTIMONIAL */
@@ -972,45 +996,51 @@ button {
   }
 
   .section-eyebrow {
-    font-size: 10px;
+    font-size: 11px;
+    margin-bottom: 12px;
   }
 
   .section-h2 {
     font-size: clamp(24px, 6vw, 32px);
+    margin-bottom: 16px;
   }
 
   .method-text p,
   .products-sub,
   .isca p,
   .newsletter p {
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 1.7;
   }
 
   .product-card {
-    padding: 16px 12px;
+    padding: 20px 16px;
   }
 
   .product-tag {
-    font-size: 9px;
-    padding: 2px 8px;
+    font-size: 10px;
+    padding: 3px 10px;
+    margin-bottom: 12px;
   }
 
   .product-title {
-    font-size: 15px;
-    margin-bottom: 8px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.4;
   }
 
   .product-body {
-    font-size: 11px;
+    font-size: 13px;
     margin-bottom: 16px;
+    line-height: 1.6;
   }
 
   .product-price {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .product-price span {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   /* ISCA */
@@ -1028,21 +1058,25 @@ button {
   }
 
   .isca-item {
-    padding: 10px 12px;
+    padding: 14px 16px;
+    gap: 12px;
   }
 
   .isca-item-icon {
-    width: 28px;
-    height: 28px;
-    font-size: 12px;
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    flex-shrink: 0;
   }
 
   .isca-item-title {
-    font-size: 11px;
+    font-size: 14px;
+    font-weight: 600;
   }
 
   .isca-item-desc {
-    font-size: 10px;
+    font-size: 13px;
+    line-height: 1.5;
   }
 
   /* TESTIMONIAL */
