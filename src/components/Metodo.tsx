@@ -22,22 +22,22 @@ export const Metodo: React.FC = () => {
             <div className="step">
               <span className="step-num">01</span>
               <div>
-                <div className="step-title">Prevenção</div>
-                <div className="step-body">Diagnóstico de vulnerabilidade de imagem. Identificar os riscos antes que se tornem manchetes — e construir protocolos antes de precisar deles.</div>
+                <h3 className="step-title">Prevenção</h3>
+                <p className="step-body">Diagnóstico de vulnerabilidade de imagem. Identificar os riscos antes que se tornem manchetes — e construir protocolos antes de precisar deles.</p>
               </div>
             </div>
             <div className="step">
               <span className="step-num">02</span>
               <div>
-                <div className="step-title">Resposta</div>
-                <div className="step-body">As primeiras 24–72 horas são decisivas. Controle de narrativa, nota oficial, briefing de porta-voz e gestão de stakeholders com precisão cirúrgica.</div>
+                <h3 className="step-title">Resposta</h3>
+                <p className="step-body">As primeiras 24–72 horas são decisivas. Controle de narrativa, nota oficial, briefing de porta-voz e gestão de stakeholders com precisão cirúrgica.</p>
               </div>
             </div>
             <div className="step">
               <span className="step-num">03</span>
               <div>
-                <div className="step-title">Recuperação</div>
-                <div className="step-body">Pós-crise não é silêncio — é reconstrução ativa. Monitoramento de reputação, ajuste de posicionamento e reativação da narrativa de valor.</div>
+                <h3 className="step-title">Recuperação</h3>
+                <p className="step-body">Pós-crise não é silêncio — é reconstrução ativa. Monitoramento de reputação, ajuste de posicionamento e reativação da narrativa de valor.</p>
               </div>
             </div>
           </div>

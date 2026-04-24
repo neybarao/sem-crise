@@ -38,29 +38,29 @@ export const Isca: React.FC = () => {
           <div className="isca-item">
             <div className="isca-item-icon">✓</div>
             <div>
-              <div className="isca-item-title">10 sinais de que sua empresa está prestes a entrar em crise</div>
-              <div className="isca-item-desc">Checklist de diagnóstico rápido — leitura de 3 minutos.</div>
+              <h3 className="isca-item-title">10 sinais de que sua empresa está prestes a entrar em crise</h3>
+              <p className="isca-item-desc">Checklist de diagnóstico rápido — leitura de 3 minutos.</p>
             </div>
           </div>
           <div className="isca-item">
             <div className="isca-item-icon">✓</div>
             <div>
-              <div className="isca-item-title">O que dizer nas primeiras 2 horas</div>
-              <div className="isca-item-desc">Versão resumida do manual completo. Acionável imediatamente.</div>
+              <h3 className="isca-item-title">O que dizer nas primeiras 2 horas</h3>
+              <p className="isca-item-desc">Versão resumida do manual completo. Acionável imediatamente.</p>
             </div>
           </div>
           <div className="isca-item">
             <div className="isca-item-icon">✓</div>
             <div>
-              <div className="isca-item-title">Nota oficial em branco com as 7 seções obrigatórias</div>
-              <div className="isca-item-desc">Template editável em .docx. Funciona para qualquer tipo de crise.</div>
+              <h3 className="isca-item-title">Nota oficial em branco com as 7 seções obrigatórias</h3>
+              <p className="isca-item-desc">Template editável em .docx. Funciona para qualquer tipo de crise.</p>
             </div>
           </div>
           <div className="isca-item">
             <div className="isca-item-icon">✓</div>
             <div>
-              <div className="isca-item-title">Quiz: sua empresa está preparada?</div>
-              <div className="isca-item-desc">Teste de 5 minutos com score de risco reputacional.</div>
+              <h3 className="isca-item-title">Quiz: sua empresa está preparada?</h3>
+              <p className="isca-item-desc">Teste de 5 minutos com score de risco reputacional.</p>
             </div>
           </div>
         </div>

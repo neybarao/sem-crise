@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /_next
+
+Sitemap: https://semcrise.com.br/sitemap.xml

@@ -18,6 +18,8 @@ export const Logo: React.FC<LogoProps> = ({ size = 'md' }) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid meet"
+      aria-label="Sem Crise - Assessoria de Comunicação de Crise"
+      role="img"
     >
       <circle cx="455" cy="80" r="32" stroke="url(#paint0_linear_7_2)" strokeWidth="2"/>
       <circle cx="455" cy="80" r="46" stroke="url(#paint1_linear_7_2)" strokeWidth="2"/>
