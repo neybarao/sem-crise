@@ -78,81 +78,83 @@ const products: Product[] = [
   },
 ];
 
-const tagColors = {
-  entrada: { bg: 'bg-mostarda bg-opacity-15', text: 'text-mostarda' },
-  essencial: { bg: 'bg-laranja bg-opacity-15', text: 'text-laranja' },
-  premium: { bg: 'bg-off-white bg-opacity-10', text: 'text-off-white text-opacity-70' },
-};
-
-const tagLabels = {
-  entrada: 'Entrada',
-  essencial: 'Essencial',
-  premium: 'Premium',
+const tagConfig = {
+  entrada: { bg: '#EEE8DE', text: '#0C0C0A', label: 'Entrada' },
+  essencial: { bg: '#EB3F00', text: '#F4F1EA', label: 'Essencial' },
+  premium: { bg: '#0F1B2D', text: '#EB3F00', label: 'Premium' },
 };
 
 export const Produtos: React.FC = () => {
   return (
-    <section id="produtos" className="bg-navy py-20 md:py-26 px-6 sm:px-14">
-      <div className="max-w-6xl mx-auto">
+    <section id="produtos" className="bg-off-white py-24 md:py-32 px-6 sm:px-12 md:px-20">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="mb-14 md:mb-16">
-          <p className="text-xs font-medium text-laranja uppercase mb-4 tracking-widest">
+        <div className="mb-16 md:mb-24">
+          <p className="text-sm md:text-base font-semibold text-laranja mb-6 tracking-wide uppercase">
             Produtos
           </p>
-          <h2 className="font-display font-semibold text-3xl sm:text-4xl md:text-5xl text-off-white mb-4">
+          <h2 className="font-display font-bold text-5xl sm:text-6xl md:text-7xl text-navy mb-8 leading-tight max-w-3xl">
             Ferramentas para cada fase.
           </h2>
-          <p className="text-base text-opacity-50 text-off-white max-w-2xl">
+          <p className="text-lg md:text-xl text-navy text-opacity-70 leading-relaxed font-light max-w-2xl">
             Da prevenção à recuperação — materiais operacionais desenvolvidos por especialistas, acionáveis em 24–72 horas.
           </p>
         </div>
 
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {products.map((product) => (
-            <div
-              key={product.id}
-              className={`bg-off-white bg-opacity-4 border border-off-white border-opacity-8 rounded-lg p-7 sm:p-6 hover:bg-opacity-8 hover:border-laranja hover:border-opacity-40 transition-all duration-normal ease-smooth ${
-                product.id === '8' ? 'sm:col-span-2 lg:col-span-2' : ''
-              }`}
-            >
-              {/* Tag */}
+        {/* Products Grid - Minimalist Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {products.map((product) => {
+            const config = tagConfig[product.tag];
+            return (
               <div
-                className={`inline-flex items-center font-xs font-medium letter-spacing-wide text-opacity-100 uppercase px-3 py-1 rounded-full mb-4 tracking-widest ${
-                  tagColors[product.tag].bg
-                } ${tagColors[product.tag].text}`}
+                key={product.id}
+                className={`p-8 md:p-10 rounded-sm border border-navy border-opacity-10 hover:border-opacity-20 transition-all duration-200 cursor-pointer group ${
+                  product.id === '8' ? 'lg:col-span-2' : ''
+                }`}
+                style={{
+                  backgroundColor: product.tag === 'entrada' ? '#F8F6F1' : product.tag === 'essencial' ? '#FFF5F0' : '#F0F4F8',
+                }}
               >
-                {tagLabels[product.tag]}
-              </div>
-
-              {/* Title */}
-              <h3 className="font-display font-semibold text-base sm:text-lg text-off-white mb-3">
-                {product.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-xs sm:text-sm text-off-white text-opacity-50 mb-5 leading-relaxed">
-                {product.description}
-              </p>
-
-              {/* Price */}
-              <div className={product.id === '8' ? 'sm:flex sm:gap-6 sm:items-baseline sm:mt-3' : ''}>
-                <div>
-                  <div className="font-display font-semibold text-xl sm:text-2xl text-off-white">
-                    {product.price}
-                  </div>
-                  <div className="text-xs text-off-white text-opacity-40 mt-1">
-                    {product.priceNote}
-                  </div>
+                {/* Tag */}
+                <div
+                  className="inline-block px-3 py-1.5 rounded text-xs font-semibold mb-6 tracking-wide uppercase"
+                  style={{
+                    backgroundColor: config.bg,
+                    color: config.text,
+                  }}
+                >
+                  {config.label}
                 </div>
-                {product.yearlyPrice && (
-                  <div className="text-xs text-off-white text-opacity-40 mt-2 sm:mt-0">
-                    ou {product.yearlyPrice}
+
+                {/* Title */}
+                <h3 className="text-xl md:text-2xl font-bold text-navy mb-4 font-display group-hover:text-laranja transition-colors duration-200">
+                  {product.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-base text-navy text-opacity-70 mb-8 leading-relaxed font-light">
+                  {product.description}
+                </p>
+
+                {/* Price */}
+                <div className={product.id === '8' ? 'md:flex md:gap-8' : ''}>
+                  <div>
+                    <div className="text-3xl md:text-4xl font-bold text-laranja font-display">
+                      {product.price}
+                    </div>
+                    <div className="text-sm text-navy text-opacity-50 mt-2">
+                      {product.priceNote}
+                    </div>
                   </div>
-                )}
+                  {product.yearlyPrice && (
+                    <div className="text-sm text-navy text-opacity-50 mt-4 md:mt-0 md:flex md:items-end">
+                      ou {product.yearlyPrice}
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

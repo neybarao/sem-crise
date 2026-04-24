@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from './Button';
 
 interface Step {
   number: string;
@@ -27,54 +26,46 @@ const steps: Step[] = [
 
 export const Metodo: React.FC = () => {
   return (
-    <section
-      id="metodo"
-      className="bg-off-white py-20 md:py-32 px-14"
-    >
-      <div className="max-w-6xl mx-auto px-6 sm:px-0">
+    <section id="metodo" className="bg-navy py-24 md:py-32 px-6 sm:px-12 md:px-20">
+      <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="grid md:grid-cols-2 gap-16 items-start mb-0">
-          <div>
-            <p className="text-xs font-medium text-laranja uppercase mb-4 tracking-widest">
-              O Método Sem Crise
-            </p>
-            <h2 className="font-display font-semibold text-3xl sm:text-4xl md:text-5xl text-grafite mb-5 leading-tight max-w-xs">
-              Protocolo antes do pânico.
-            </h2>
-            <p className="text-sm sm:text-base text-opacity-62 text-grafite leading-relaxed mb-4 max-w-sm">
+        <div className="mb-16 md:mb-24">
+          <p className="text-sm md:text-base font-semibold text-laranja mb-6 tracking-wide uppercase">
+            O Método Sem Crise
+          </p>
+          <h2 className="font-display font-bold text-5xl sm:text-6xl md:text-7xl text-off-white mb-8 leading-tight max-w-3xl">
+            Protocolo antes do pânico.
+          </h2>
+          <div className="prose prose-invert max-w-2xl">
+            <p className="text-lg md:text-xl text-off-white text-opacity-70 leading-relaxed font-light mb-4">
               Em crise, improvisar é o pior erro. Cada resposta precipitada aprofunda o estrago. O Método Sem Crise transforma o caos em protocolo — com ferramentas, frameworks e vocabulário técnico desenvolvidos a partir de casos reais.
             </p>
-            <p className="text-sm sm:text-base text-opacity-62 text-grafite leading-relaxed mb-8 max-w-sm">
+            <p className="text-lg md:text-xl text-off-white text-opacity-70 leading-relaxed font-light">
               A marca é a protagonista. O porta-voz, o instrumento. Nós somos o bastidor que define o resultado.
             </p>
-            <a href="#produtos">
-              <Button variant="primary" className="text-sm py-3 px-6">
-                Ver produtos e ferramentas
-              </Button>
-            </a>
           </div>
+        </div>
 
-          {/* Steps */}
-          <div className="space-y-0">
-            {steps.map((step, index) => (
-              <div
-                key={index}
-                className="flex gap-6 py-7 border-b border-opacity-7 border-grafite first:border-t"
-              >
-                <div className="text-sm font-semibold text-laranja flex-shrink-0 pt-0.5 min-w-8">
-                  {step.number}
-                </div>
-                <div>
-                  <h3 className="font-display font-semibold text-base sm:text-lg text-grafite mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-opacity-58 text-grafite leading-snug">
-                    {step.description}
-                  </p>
-                </div>
+        {/* Steps - Minimalist Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+          {steps.map((step, index) => (
+            <div key={index} className="flex flex-col">
+              {/* Number */}
+              <div className="text-6xl md:text-7xl font-bold text-laranja text-opacity-20 mb-6 font-display">
+                {step.number}
               </div>
-            ))}
-          </div>
+
+              {/* Title */}
+              <h3 className="text-2xl md:text-3xl font-bold text-off-white mb-4 font-display">
+                {step.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-base md:text-lg text-off-white text-opacity-60 leading-relaxed font-light">
+                {step.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,8 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Input } from './Input';
-import { Button } from './Button';
 
 interface Resource {
   title: string;
@@ -34,7 +32,6 @@ export const Isca: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Email submitted:', email);
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
@@ -43,63 +40,58 @@ export const Isca: React.FC = () => {
   };
 
   return (
-    <section id="gratuitos" className="bg-creme py-20 md:py-26 px-6 sm:px-14">
+    <section id="gratuitos" className="bg-navy py-24 md:py-32 px-6 sm:px-12 md:px-20">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
           {/* Form Section */}
           <div>
-            <p className="text-xs font-medium text-laranja uppercase mb-4 tracking-widest">
+            <p className="text-sm md:text-base font-semibold text-laranja mb-6 tracking-wide uppercase">
               Materiais gratuitos
             </p>
-            <h2 className="font-display font-semibold text-3xl sm:text-4xl md:text-5xl text-grafite mb-4 leading-tight max-w-xs">
+            <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl text-off-white mb-8 leading-tight">
               Comece com o que você precisa agora.
             </h2>
-            <p className="text-sm sm:text-base text-opacity-60 text-grafite leading-relaxed mb-8 max-w-sm">
+            <p className="text-lg md:text-xl text-off-white text-opacity-70 leading-relaxed mb-10 font-light max-w-md">
               Quatro ferramentas prontas para usar — sem cadastro, sem enrolação. Porque bom assessor entrega antes de cobrar.
             </p>
 
             {!submitted ? (
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 mb-3">
-                <Input
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 mb-4">
+                <input
                   type="email"
                   placeholder="Seu melhor e-mail"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 text-sm"
+                  className="flex-1 px-6 py-4 rounded text-navy placeholder:text-navy placeholder:text-opacity-40 focus:outline-none focus:ring-2 focus:ring-laranja"
                   required
                 />
-                <Button type="submit" variant="primary" size="sm" className="flex-shrink-0">
+                <button
+                  type="submit"
+                  className="px-8 py-4 md:px-10 bg-laranja text-off-white font-semibold hover:bg-laranja-hover transition-colors duration-200 rounded whitespace-nowrap"
+                >
                   Quero os materiais
-                </Button>
+                </button>
               </form>
             ) : (
-              <div className="text-laranja font-display font-italic text-base mb-3">
-                Enviado. Confira sua caixa de entrada em instantes.
+              <div className="text-laranja font-semibold text-lg mb-4">
+                ✓ Enviado. Confira sua caixa de entrada em instantes.
               </div>
             )}
-            <p className="text-xs text-opacity-35 text-grafite">
+            <p className="text-sm text-off-white text-opacity-50">
               Sem spam. Cancelamento a qualquer momento.
             </p>
           </div>
 
           {/* Resources Grid */}
-          <div className="flex flex-col gap-3">
+          <div className="grid grid-cols-1 gap-6">
             {resources.map((resource, index) => (
-              <div
-                key={index}
-                className="bg-off-white rounded-md p-4 sm:p-4 shadow-sm"
-              >
-                <div className="flex gap-3">
-                  <div className="text-laranja font-semibold flex-shrink-0">✓</div>
-                  <div>
-                    <h3 className="font-semibold text-xs sm:text-sm text-grafite mb-1">
-                      {resource.title}
-                    </h3>
-                    <p className="text-xs text-opacity-50 text-grafite leading-snug">
-                      {resource.description}
-                    </p>
-                  </div>
-                </div>
+              <div key={index} className="border-l-2 border-laranja pl-6">
+                <h3 className="font-semibold text-lg text-off-white mb-2">
+                  {resource.title}
+                </h3>
+                <p className="text-off-white text-opacity-60 font-light">
+                  {resource.description}
+                </p>
               </div>
             ))}
           </div>

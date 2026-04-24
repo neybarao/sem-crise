@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { Logo } from './Logo';
-import { Button } from './Button';
 
 const navLinks = [
   { href: '#metodo', label: 'Método' },
@@ -33,41 +32,47 @@ export const Nav: React.FC = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-100 h-17 px-14 py-4 flex items-center justify-between transition-all duration-normal ease-smooth ${
-        isScrolled
-          ? 'bg-navy bg-opacity-95 backdrop-blur-lg border-b border-opacity-8 border-off-white'
-          : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 px-6 sm:px-12 md:px-20 py-5 md:py-6 transition-all duration-200 ${
+        isScrolled ? 'bg-off-white bg-opacity-95 backdrop-blur-md border-b border-navy border-opacity-10' : 'bg-transparent'
       }`}
     >
-      {/* Logo */}
-      <a href="#" className="flex items-center gap-2" onClick={(e) => handleNavClick(e, '#hero')}>
-        <Logo size="md" variant={isScrolled ? 'light' : 'light'} showText={true} />
-      </a>
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        {/* Logo */}
+        <a href="#hero" onClick={(e) => handleNavClick(e, '#hero')} className="flex-shrink-0">
+          <Logo size="sm" variant={isScrolled ? 'dark' : 'light'} showText={true} />
+        </a>
 
-      {/* Nav Links */}
-      <div className="hidden md:flex items-center gap-8">
-        {navLinks.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            onClick={(e) => handleNavClick(e, link.href)}
-            className="text-sm text-opacity-65 text-off-white hover:text-opacity-100 transition-all duration-normal ease-smooth"
-          >
-            {link.label}
-          </a>
-        ))}
+        {/* Links - Hidden on mobile */}
+        <div className="hidden md:flex items-center gap-10">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
+              className={`text-sm font-medium transition-colors duration-200 ${
+                isScrolled
+                  ? 'text-navy hover:text-laranja'
+                  : 'text-off-white hover:text-laranja'
+              }`}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+
+        {/* CTA Button */}
+        <a
+          href="#newsletter"
+          onClick={(e) => handleNavClick(e, '#newsletter')}
+          className={`hidden sm:block px-6 py-2.5 rounded font-semibold transition-all duration-200 ${
+            isScrolled
+              ? 'bg-laranja text-off-white hover:bg-laranja-hover'
+              : 'bg-laranja text-off-white hover:bg-laranja-hover'
+          }`}
+        >
+          Começar
+        </a>
       </div>
-
-      {/* CTA Button */}
-      <a
-        href="#newsletter"
-        onClick={(e) => handleNavClick(e, '#newsletter')}
-        className="hidden sm:block"
-      >
-        <Button variant="primary" size="sm">
-          Começar agora
-        </Button>
-      </a>
     </nav>
   );
 };

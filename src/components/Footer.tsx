@@ -10,21 +10,19 @@ const footerLinks = [
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-dark-footer py-11 px-6 sm:px-14 border-t border-off-white border-opacity-5">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col xs:flex-row xs:items-center xs:justify-between gap-6">
+    <footer className="bg-navy px-6 sm:px-12 md:px-20 py-12 border-t border-off-white border-opacity-10">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <Logo size="sm" variant="light" showText={true} />
-          </div>
+          <Logo size="sm" variant="light" showText={true} />
 
           {/* Links */}
-          <div className="flex flex-wrap items-center gap-6">
+          <div className="flex flex-wrap gap-8 md:gap-12">
             {footerLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-xs text-opacity-35 text-off-white hover:text-opacity-70 transition-all duration-normal ease-smooth"
+                className="text-sm text-off-white text-opacity-60 hover:text-opacity-100 transition-opacity duration-200 font-light"
               >
                 {link.label}
               </a>
@@ -32,8 +30,8 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Copyright */}
-          <div className="text-xs text-opacity-20 text-off-white whitespace-nowrap">
-            © 2026 Sem Crise. Assessoria de Comunicação de Crise.
+          <div className="text-xs text-off-white text-opacity-40 font-light">
+            © 2026 Sem Crise
           </div>
         </div>
       </div>

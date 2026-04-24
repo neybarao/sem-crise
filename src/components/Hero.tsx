@@ -1,109 +1,59 @@
 import React from 'react';
-import { Button } from './Button';
-
-interface HeroStat {
-  number: string;
-  label: string;
-}
-
-const stats: HeroStat[] = [
-  { number: '+200', label: 'Crises gerenciadas' },
-  { number: '24h', label: 'Disponibilidade total' },
-  { number: '98%', label: 'Reputações preservadas' },
-];
 
 export const Hero: React.FC = () => {
   return (
-    <section
-      id="hero"
-      className="relative bg-navy pt-24 pb-16 md:pb-24 px-14 min-h-screen flex flex-col justify-center overflow-hidden"
-    >
-      {/* Decorative SVG motif */}
-      <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-160 h-160 opacity-13 pointer-events-none">
-        <svg
-          viewBox="0 0 680 680"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full"
-        >
-          <defs>
-            <linearGradient
-              id="heroGradient"
-              x1="340"
-              y1="0"
-              x2="340"
-              y2="680"
-            >
-              <stop offset="0%" stopColor="#EB3F00" />
-              <stop offset="100%" stopColor="#EB3F00" stopOpacity="0" />
-            </linearGradient>
-          </defs>
-          <circle cx="340" cy="340" r="340" fill="url(#heroGradient)" />
-          <circle
-            cx="340"
-            cy="340"
-            r="255"
-            fill="none"
-            stroke="url(#heroGradient)"
-            strokeWidth="2"
-          />
-          <circle
-            cx="340"
-            cy="340"
-            r="170"
-            fill="none"
-            stroke="url(#heroGradient)"
-            strokeWidth="2"
-          />
-        </svg>
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 max-w-3xl px-6 sm:px-0">
+    <section id="hero" className="bg-off-white min-h-screen flex flex-col justify-center px-6 sm:px-12 md:px-20 py-24 md:py-32">
+      <div className="max-w-4xl">
         {/* Eyebrow */}
-        <p className="text-xs font-medium text-laranja uppercase mb-7 tracking-widest">
-          Assessoria de Comunicação de Crise
+        <p className="text-sm md:text-base font-semibold text-laranja mb-6 tracking-wide uppercase">
+          Assessoria de Crise
         </p>
 
-        {/* Heading */}
-        <h1 className="font-display font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-off-white leading-tight mb-2 -tracking-wider">
-          A crise é inevitável.
-          <br />
-          <span className="text-opacity-32">O estrago, não.</span>
+        {/* Main Headline - Ultra Bold */}
+        <h1 className="font-display font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-navy leading-tight mb-8 md:mb-10">
+          A crise é<br className="hidden sm:block" />
+          inevitável.
         </h1>
 
-        {/* Subtitle */}
-        <p className="text-base sm:text-lg md:text-xl text-opacity-58 text-off-white leading-relaxed max-w-xl my-7">
+        {/* Subheading - Lighter */}
+        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-navy text-opacity-40 font-light mb-8 md:mb-12 leading-snug">
+          O estrago, não.
+        </h2>
+
+        {/* Description */}
+        <p className="text-lg md:text-xl text-navy text-opacity-70 leading-relaxed mb-12 md:mb-16 max-w-2xl font-light">
           Estratégia, velocidade e controle de narrativa para proteger sua imagem quando mais importa. Feito por quem já esteve na sala de guerra.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col xs:flex-row gap-3 mb-20">
+        <div className="flex flex-col sm:flex-row gap-4">
           <a href="#gratuitos">
-            <Button variant="primary" className="w-full xs:w-auto">
-              Receber material gratuito
-            </Button>
+            <button className="px-8 py-4 md:px-10 md:py-5 bg-laranja text-off-white font-semibold hover:bg-laranja-hover transition-colors duration-200 rounded">
+              Receber materiais gratuitos
+            </button>
           </a>
           <a href="#metodo">
-            <Button variant="ghost" className="w-full xs:w-auto">
+            <button className="px-8 py-4 md:px-10 md:py-5 border-2 border-navy text-navy font-semibold hover:bg-navy hover:text-off-white transition-colors duration-200 rounded">
               Conhecer o método
-            </Button>
+            </button>
           </a>
         </div>
-      </div>
 
-      {/* Stats Strip */}
-      <div className="relative z-10 grid grid-cols-3 gap-8 sm:gap-14 border-t border-opacity-7 border-off-white pt-9 px-6 sm:px-0">
-        {stats.map((stat, index) => (
-          <div key={index}>
-            <div className="font-display font-semibold text-2xl sm:text-3xl text-off-white mb-1">
-              {stat.number}
-            </div>
-            <div className="text-xs text-opacity-40 text-off-white leading-tight">
-              {stat.label}
-            </div>
+        {/* Stats */}
+        <div className="grid grid-cols-3 gap-8 md:gap-16 mt-20 md:mt-24 pt-12 md:pt-16 border-t border-navy border-opacity-10">
+          <div>
+            <div className="text-4xl md:text-5xl font-bold text-laranja mb-2">+200</div>
+            <p className="text-sm text-navy text-opacity-60">Crises gerenciadas</p>
           </div>
-        ))}
+          <div>
+            <div className="text-4xl md:text-5xl font-bold text-laranja mb-2">24h</div>
+            <p className="text-sm text-navy text-opacity-60">Disponibilidade total</p>
+          </div>
+          <div>
+            <div className="text-4xl md:text-5xl font-bold text-laranja mb-2">98%</div>
+            <p className="text-sm text-navy text-opacity-60">Reputações preservadas</p>
+          </div>
+        </div>
       </div>
     </section>
   );
