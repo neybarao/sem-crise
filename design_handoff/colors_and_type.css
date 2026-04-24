@@ -1,0 +1,249 @@
+/* ============================================================
+   SEM CRISE — Design Tokens
+   colors_and_type.css
+   ============================================================ */
+
+/* ── BRAND FONTS (local files) ───────────────────────────── */
+@font-face {
+  font-family: 'Lora';
+  src: url('fonts/Lora-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lora';
+  src: url('fonts/Lora-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist';
+  src: url('fonts/Geist-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('fonts/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('fonts/JetBrainsMono-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ── BASE COLOR PALETTE ──────────────────────────────────── */
+:root {
+  --color-navy:           #0F1B2D;
+  --color-off-white:      #F4F1EA;
+  --color-grafite:        #0C0C0A;
+  --color-laranja:        #EB3F00;
+  --color-laranja-hover:  #C93500;
+  --color-laranja-light:  #FF6B35;
+  --color-mostarda:       #E8AD3B;
+  --color-mostarda-light: #F0C96A;
+
+  /* Neutrals derived from palette */
+  --color-navy-80:        rgba(15, 27, 45, 0.8);
+  --color-navy-40:        rgba(15, 27, 45, 0.4);
+  --color-navy-12:        rgba(15, 27, 45, 0.12);
+  --color-white:          #FFFFFF;
+  --color-black:          #000000;
+
+  /* ── SEMANTIC COLORS ─────────────────────────────────── */
+  --fg-primary:           var(--color-grafite);
+  --fg-secondary:         rgba(12, 12, 10, 0.6);
+  --fg-muted:             rgba(12, 12, 10, 0.35);
+  --fg-on-dark:           var(--color-parchment);
+  --fg-on-dark-muted:     rgba(244, 241, 234, 0.5);
+  --fg-accent:            var(--color-laranja);
+
+  --bg-primary:           var(--color-off-white);
+  --bg-secondary:         #EEE8DE;
+  --bg-dark:              var(--color-navy);
+  --bg-dark-raised:       #162338;
+
+  --border-default:       rgba(15, 27, 45, 0.12);
+  --border-strong:        rgba(15, 27, 45, 0.24);
+  --border-on-dark:       rgba(244, 241, 234, 0.12);
+
+  --accent:               var(--color-laranja);
+  --accent-hover:         var(--color-laranja-hover);
+  --accent-secondary:     var(--color-mostarda);
+
+  /* ── SHADOWS ─────────────────────────────────────────── */
+  --shadow-sm:    0 1px 3px rgba(15, 27, 45, 0.10);
+  --shadow-md:    0 2px 8px  rgba(15, 27, 45, 0.12);
+  --shadow-lg:    0 4px 16px rgba(15, 27, 45, 0.16);
+  --shadow-xl:    0 8px 32px rgba(15, 27, 45, 0.20);
+
+  /* ── SPACING ─────────────────────────────────────────── */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+  --space-32:  128px;
+
+  /* ── BORDER RADIUS ───────────────────────────────────── */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   16px;
+  --radius-btn:  9999px;
+  --radius-full: 9999px;
+
+  /* ── TYPOGRAPHY — FONT FAMILIES ──────────────────────── */
+  --font-display: 'Lora', 'Georgia', serif;
+  --font-body:    'Geist', 'Inter', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+
+  /* ── TYPOGRAPHY — SCALE ──────────────────────────────── */
+  --text-xs:    0.75rem;    /* 12px */
+  --text-sm:    0.875rem;   /* 14px */
+  --text-base:  1rem;       /* 16px */
+  --text-lg:    1.125rem;   /* 18px */
+  --text-xl:    1.25rem;    /* 20px */
+  --text-2xl:   1.5rem;     /* 24px */
+  --text-3xl:   1.875rem;   /* 30px */
+  --text-4xl:   2.25rem;    /* 36px */
+  --text-5xl:   3rem;       /* 48px */
+  --text-6xl:   3.75rem;    /* 60px */
+  --text-7xl:   4.5rem;     /* 72px */
+  --text-8xl:   6rem;       /* 96px */
+
+  /* ── TYPOGRAPHY — LINE HEIGHTS ───────────────────────── */
+  --leading-tight:  1.2;
+  --leading-snug:   1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed:1.625;
+
+  /* ── TYPOGRAPHY — LETTER SPACING ────────────────────── */
+  --tracking-tight:  -0.03em;
+  --tracking-normal: 0em;
+  --tracking-wide:   0.05em;
+  --tracking-wider:  0.1em;
+
+  /* ── TRANSITIONS ─────────────────────────────────────── */
+  --ease-out: cubic-bezier(0.25, 0, 0.1, 1);
+  --ease-in:  cubic-bezier(0.4, 0, 1, 1);
+  --ease-inout: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast:   150ms;
+  --duration-normal: 250ms;
+  --duration-slow:   400ms;
+}
+
+/* ── SEMANTIC ELEMENT DEFAULTS ───────────────────────────── */
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--fg-primary);
+  background: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-6xl);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-primary);
+}
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+h3, .h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  line-height: var(--leading-snug);
+}
+
+h4, .h4 {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: var(--leading-snug);
+}
+
+h5, .h5 {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+
+p, .body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--fg-primary);
+}
+
+.body-lg {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+}
+
+.body-sm {
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.caption {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--fg-muted);
+}
+
+blockquote, .quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--text-2xl);
+  line-height: var(--leading-snug);
+  color: var(--fg-primary);
+}
+
+code, .mono {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--border-default);
+  padding: 0.1em 0.4em;
+  border-radius: var(--radius-sm);
+}
+
+/* ── UTILITY CLASSES ─────────────────────────────────────── */
+.text-accent   { color: var(--color-laranja); }
+.text-muted    { color: var(--fg-muted); }
+.text-on-dark  { color: var(--fg-on-dark); }
+.bg-dark       { background: var(--bg-dark); }
+.bg-light      { background: var(--bg-primary); }

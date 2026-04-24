@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sem Crise — Assessoria de Comunicação de Crise</title>
+<style>
+@font-face { font-family:'Lora'; src:url('../fonts/Lora-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-style:normal; font-display:swap; }
+@font-face { font-family:'Lora'; src:url('../fonts/Lora-Italic-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-style:italic; font-display:swap; }
+@font-face { font-family:'Geist'; src:url('../fonts/Geist-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-style:normal; font-display:swap; }
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Geist',system-ui,sans-serif; background:#F4F1EA; color:#0C0C0A; -webkit-font-smoothing:antialiased; }
+a { color:inherit; text-decoration:none; }
+button { cursor:pointer; font-family:'Geist',sans-serif; }
+:focus-visible { outline:2px solid #EB3F00; outline-offset:3px; }
+::-webkit-scrollbar { width:5px; } ::-webkit-scrollbar-track { background:#0F1B2D; } ::-webkit-scrollbar-thumb { background:rgba(244,241,234,0.2); border-radius:9999px; }
+
+/* ── NAV ───────────────────────────────────────────────── */
+.nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:0 56px; height:68px;
+  display:flex; align-items:center; justify-content:space-between;
+  transition:background 300ms, border-color 300ms;
+}
+.nav.scrolled {
+  background:rgba(15,27,45,0.95);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(244,241,234,0.08);
+}
+.nav-logo { display:flex; align-items:center; gap:10px; background:none; border:none; }
+.nav-logo-text { font-family:'Lora',serif; font-weight:600; font-size:19px; color:#F4F1EA; letter-spacing:-0.025em; }
+.nav-links { display:flex; align-items:center; gap:36px; }
+.nav-link { background:none; border:none; font-size:14px; color:rgba(244,241,234,0.65); transition:color 200ms; }
+.nav-link:hover { color:#F4F1EA; }
+.nav-cta {
+  background:#EB3F00; color:#F4F1EA; border:none;
+  border-radius:9999px; padding:9px 22px;
+  font-size:13px; font-weight:500;
+  transition:background 200ms;
+}
+.nav-cta:hover { background:#C93500; }
+
+/* ── HERO ──────────────────────────────────────────────── */
+.hero {
+  background:#0F1B2D; min-height:100vh;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:120px 56px 80px; position:relative; overflow:hidden;
+}
+.hero-motif {
+  position:absolute; right:-40px; top:50%;
+  transform:translateY(-50%);
+  opacity:0.13; pointer-events:none;
+}
+.hero-eyebrow {
+  font-size:11px; font-weight:500; letter-spacing:0.14em;
+  text-transform:uppercase; color:#EB3F00; margin-bottom:28px;
+}
+.hero-h1 {
+  font-family:'Lora',serif; font-weight:600;
+  font-size:clamp(48px,6.5vw,88px);
+  line-height:1.04; letter-spacing:-0.035em;
+  color:#F4F1EA; max-width:780px;
+}
+.hero-h1 .dim { color:rgba(244,241,234,0.32); }
+.hero-sub {
+  font-size:clamp(15px,1.4vw,18px); line-height:1.7;
+  color:rgba(244,241,234,0.58); max-width:500px;
+  margin:28px 0 40px;
+}
+.hero-btns { display:flex; gap:12px; flex-wrap:wrap; }
+.btn-primary {
+  background:#EB3F00; color:#F4F1EA; border:none;
+  border-radius:9999px; padding:14px 32px;
+  font-size:15px; font-weight:500;
+  transition:background 200ms, transform 150ms;
+}
+.btn-primary:hover { background:#C93500; }
+.btn-primary:active { transform:scale(0.97); }
+.btn-ghost {
+  background:transparent; color:rgba(244,241,234,0.75);
+  border:1.5px solid rgba(244,241,234,0.18);
+  border-radius:9999px; padding:14px 30px;
+  font-size:15px; font-weight:400;
+  transition:all 200ms;
+}
+.btn-ghost:hover { border-color:rgba(244,241,234,0.4); color:#F4F1EA; }
+.hero-stats {
+  margin-top:72px; padding-top:36px;
+  border-top:1px solid rgba(244,241,234,0.07);
+  display:flex; gap:56px;
+}
+.stat-num { font-family:'Lora',serif; font-size:32px; font-weight:600; color:#F4F1EA; line-height:1; }
+.stat-label { font-size:12px; color:rgba(244,241,234,0.4); margin-top:5px; letter-spacing:0.02em; }
+
+/* ── MÉTODO ────────────────────────────────────────────── */
+.method { background:#F4F1EA; padding:104px 56px; }
+.section-eyebrow {
+  font-size:11px; font-weight:500; letter-spacing:0.14em;
+  text-transform:uppercase; color:#EB3F00; margin-bottom:16px;
+}
+.section-h2 {
+  font-family:'Lora',serif; font-weight:600;
+  font-size:clamp(30px,3.5vw,52px);
+  line-height:1.12; letter-spacing:-0.025em; color:#0C0C0A;
+}
+.method-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; margin-top:0; }
+.method-text .section-h2 { max-width:480px; margin-bottom:20px; }
+.method-text p { font-size:16px; line-height:1.75; color:rgba(12,12,10,0.62); margin-bottom:14px; max-width:460px; }
+.method-steps { display:flex; flex-direction:column; gap:0; }
+.step {
+  display:flex; gap:24px; padding:28px 0;
+  border-bottom:1px solid rgba(15,27,45,0.07);
+}
+.step:first-child { border-top:1px solid rgba(15,27,45,0.07); }
+.step-num {
+  font-family:'Lora',serif; font-size:13px; font-weight:600;
+  color:#EB3F00; min-width:28px; padding-top:3px;
+}
+.step-title { font-family:'Lora',serif; font-size:18px; font-weight:600; color:#0C0C0A; margin-bottom:6px; }
+.step-body { font-size:14px; color:rgba(12,12,10,0.58); line-height:1.6; }
+
+/* ── PRODUTOS ──────────────────────────────────────────── */
+.products { background:#0F1B2D; padding:104px 56px; }
+.products .section-h2 { color:#F4F1EA; max-width:580px; margin-bottom:8px; }
+.products-sub { font-size:16px; color:rgba(244,241,234,0.5); margin:12px 0 56px; max-width:480px; }
+.products-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.product-card {
+  background:rgba(244,241,234,0.04); border:1px solid rgba(244,241,234,0.08);
+  border-radius:16px; padding:28px 24px;
+  transition:background 250ms, border-color 250ms, transform 250ms;
+  cursor:default;
+}
+.product-card:hover {
+  background:rgba(244,241,234,0.08); border-color:rgba(235,63,0,0.4);
+  transform:translateY(-3px);
+}
+.product-tag {
+  display:inline-flex; align-items:center;
+  font-size:10px; font-weight:500; letter-spacing:0.08em;
+  text-transform:uppercase; padding:3px 10px; border-radius:9999px;
+  margin-bottom:16px;
+}
+.tag-entry { background:rgba(232,173,59,0.15); color:#E8AD3B; }
+.tag-mid   { background:rgba(235,63,0,0.15); color:#EB3F00; }
+.tag-prem  { background:rgba(244,241,234,0.1); color:rgba(244,241,234,0.7); }
+.product-title { font-family:'Lora',serif; font-size:18px; font-weight:600; color:#F4F1EA; line-height:1.3; margin-bottom:10px; }
+.product-body { font-size:13px; color:rgba(244,241,234,0.5); line-height:1.65; margin-bottom:20px; }
+.product-price { font-family:'Lora',serif; font-size:22px; font-weight:600; color:#F4F1EA; }
+.product-price span { font-family:'Geist',sans-serif; font-size:13px; font-weight:400; color:rgba(244,241,234,0.4); }
+
+/* ── ISCA ──────────────────────────────────────────────── */
+.isca { background:#EEE8DE; padding:96px 56px; }
+.isca-inner {
+  max-width:1100px; margin:0 auto;
+  display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;
+}
+.isca .section-h2 { margin-bottom:16px; max-width:460px; }
+.isca p { font-size:15px; line-height:1.75; color:rgba(12,12,10,0.6); margin-bottom:28px; max-width:440px; }
+.isca-form { display:flex; gap:10px; flex-wrap:wrap; }
+.isca-input {
+  flex:1; min-width:220px;
+  font-family:'Geist',sans-serif; font-size:14px; color:#0C0C0A;
+  background:#F4F1EA; border:1.5px solid rgba(15,27,45,0.15);
+  border-radius:9999px; padding:12px 20px; outline:none;
+  transition:border-color 200ms;
+}
+.isca-input:focus { border-color:#EB3F00; }
+.isca-input::placeholder { color:rgba(12,12,10,0.35); }
+.isca-items { display:flex; flex-direction:column; gap:12px; }
+.isca-item {
+  display:flex; align-items:flex-start; gap:14px;
+  background:#F4F1EA; border-radius:12px; padding:16px 18px;
+  box-shadow:0 1px 4px rgba(15,27,45,0.07);
+}
+.isca-item-icon {
+  width:36px; height:36px; border-radius:9999px;
+  background:rgba(235,63,0,0.1); color:#EB3F00;
+  display:flex; align-items:center; justify-content:center;
+  font-size:15px; flex-shrink:0;
+}
+.isca-item-title { font-size:13px; font-weight:600; color:#0C0C0A; margin-bottom:2px; }
+.isca-item-desc { font-size:12px; color:rgba(12,12,10,0.5); line-height:1.5; }
+
+/* ── DEPOIMENTO ────────────────────────────────────────── */
+.testimonial { background:#0F1B2D; padding:96px 56px; text-align:center; }
+.testimonial blockquote {
+  font-family:'Lora',serif; font-style:italic;
+  font-size:clamp(20px,2.4vw,30px);
+  color:#F4F1EA; line-height:1.5; letter-spacing:-0.01em;
+  max-width:760px; margin:0 auto 28px;
+}
+.testimonial cite { display:block; font-family:'Geist',sans-serif; font-style:normal; font-size:13px; font-weight:500; color:rgba(244,241,234,0.4); letter-spacing:0.04em; text-transform:uppercase; }
+
+/* ── NEWSLETTER ────────────────────────────────────────── */
+.newsletter { background:#F4F1EA; padding:96px 56px; }
+.newsletter-inner { max-width:560px; margin:0 auto; text-align:center; }
+.newsletter .section-h2 { margin-bottom:12px; }
+.newsletter p { font-size:15px; line-height:1.7; color:rgba(12,12,10,0.55); margin-bottom:32px; }
+.newsletter-form { display:flex; gap:10px; }
+.newsletter-input {
+  flex:1; font-family:'Geist',sans-serif; font-size:14px; color:#0C0C0A;
+  background:#fff; border:1.5px solid rgba(15,27,45,0.15);
+  border-radius:9999px; padding:13px 22px; outline:none;
+  transition:border-color 200ms;
+}
+.newsletter-input:focus { border-color:#EB3F00; }
+.newsletter-input::placeholder { color:rgba(12,12,10,0.35); }
+.newsletter-note { font-size:11px; color:rgba(12,12,10,0.35); margin-top:12px; }
+
+/* ── FOOTER ────────────────────────────────────────────── */
+.footer { background:#080F1A; padding:44px 56px; border-top:1px solid rgba(244,241,234,0.05); }
+.footer-inner { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
+.footer-logo { display:flex; align-items:center; gap:9px; }
+.footer-logo-text { font-family:'Lora',serif; font-weight:600; font-size:16px; color:#F4F1EA; letter-spacing:-0.02em; }
+.footer-links { display:flex; gap:24px; }
+.footer-link { font-size:13px; color:rgba(244,241,234,0.35); background:none; border:none; transition:color 180ms; }
+.footer-link:hover { color:rgba(244,241,234,0.7); }
+.footer-copy { font-size:12px; color:rgba(244,241,234,0.2); }
+
+/* ── UTILITY ───────────────────────────────────────────── */
+.container { max-width:1160px; margin:0 auto; }
+.confirm-msg { font-family:'Lora',serif; font-style:italic; font-size:18px; color:#EB3F00; text-align:center; padding:16px 0; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <a href="#hero" class="nav-logo" aria-label="Sem Crise">
+    <svg width="28" height="28" viewBox="0 0 60 60" fill="none">
+      <defs>
+        <linearGradient id="ng1" x1="30" y1="5" x2="30" y2="38" gradientUnits="userSpaceOnUse"><stop stop-color="#EB3F00"/><stop offset="1" stop-color="#EB3F00" stop-opacity="0"/></linearGradient>
+        <linearGradient id="ng2" x1="30" y1="0" x2="30" y2="38" gradientUnits="userSpaceOnUse"><stop stop-color="#EB3F00"/><stop offset="1" stop-color="#EB3F00" stop-opacity="0"/></linearGradient>
+        <linearGradient id="ng3" x1="30" y1="-6" x2="30" y2="38" gradientUnits="userSpaceOnUse"><stop stop-color="#EB3F00"/><stop offset="1" stop-color="#EB3F00" stop-opacity="0"/></linearGradient>
+      </defs>
+      <circle cx="30" cy="30" r="9"  stroke="url(#ng1)" stroke-width="1.5"/>
+      <circle cx="30" cy="30" r="18" stroke="url(#ng2)" stroke-width="1.5"/>
+      <circle cx="30" cy="30" r="27" stroke="url(#ng3)" stroke-width="1.5"/>
+      <circle cx="30" cy="30" r="4" fill="#EB3F00"/>
+    </svg>
+    <span class="nav-logo-text">Sem Crise</span>
+  </a>
+  <div class="nav-links">
+    <a href="#metodo" class="nav-link">Método</a>
+    <a href="#produtos" class="nav-link">Produtos</a>
+    <a href="#gratuitos" class="nav-link">Gratuitos</a>
+    <a href="#newsletter" class="nav-link">Newsletter</a>
+    <a href="#newsletter" class="nav-cta">Começar agora</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <!-- Concentric circles motif -->
+  <div class="hero-motif">
+    <svg width="680" height="680" viewBox="0 0 680 680" fill="none">
+      <defs>
+        <linearGradient id="hg1" x1="340" y1="180" x2="340" y2="480" gradientUnits="userSpaceOnUse"><stop stop-color="#EB3F00"/><stop offset="1" stop-color="#EB3F00" stop-opacity="0"/></linearGradient>
+        <linearGradient id="hg2" x1="340" y1="100" x2="340" y2="480" gradientUnits="userSpaceOnUse"><stop stop-color="#EB3F00"/><stop offset="1" stop-color="#EB3F00" stop-opacity="0"/></linearGradient>
+        <linearGradient id="hg3" x1="340" y1="20" x2="340" y2="480" gradientUnits="userSpaceOnUse"><stop stop-color="#EB3F00"/><stop offset="1" stop-color="#EB3F00" stop-opacity="0"/></linearGradient>
+        <linearGradient id="hg4" x1="340" y1="-40" x2="340" y2="480" gradientUnits="userSpaceOnUse"><stop stop-color="#EB3F00"/><stop offset="1" stop-color="#EB3F00" stop-opacity="0"/></linearGradient>
+      </defs>
+      <circle cx="340" cy="340" r="80"  stroke="url(#hg1)" stroke-width="1.2"/>
+      <circle cx="340" cy="340" r="140" stroke="url(#hg2)" stroke-width="1.2"/>
+      <circle cx="340" cy="340" r="210" stroke="url(#hg3)" stroke-width="1.2"/>
+      <circle cx="340" cy="340" r="290" stroke="url(#hg4)" stroke-width="1.2"/>
+      <circle cx="340" cy="340" r="18" fill="#EB3F00"/>
+    </svg>
+  </div>
+
+  <div style="position:relative; max-width:760px;">
+    <p class="hero-eyebrow">Assessoria de Comunicação de Crise</p>
+    <h1 class="hero-h1">
+      A crise é inevitável.<br>
+      <span class="dim">O estrago, não.</span>
+    </h1>
+    <p class="hero-sub">
+      Estratégia, velocidade e controle de narrativa para proteger sua imagem quando mais importa. Feito por quem já esteve na sala de guerra.
+    </p>
+    <div class="hero-btns">
+      <a href="#gratuitos" class="btn-primary">Receber material gratuito</a>
+      <a href="#metodo" class="btn-ghost">Conhecer o método</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">+200</div>
+        <div class="stat-label">Crises gerenciadas</div>
+      </div>
+      <div>
+        <div class="stat-num">24h</div>
+        <div class="stat-label">Disponibilidade total</div>
+      </div>
+      <div>
+        <div class="stat-num">98%</div>
+        <div class="stat-label">Reputações preservadas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÉTODO -->
+<section class="method" id="metodo">
+  <div class="container">
+    <div class="method-grid">
+      <div class="method-text">
+        <p class="section-eyebrow">O Método Sem Crise</p>
+        <h2 class="section-h2">Protocolo antes do pânico.</h2>
+        <p style="margin-top:20px;">
+          Em crise, improvisar é o pior erro. Cada resposta precipitada aprofunda o estrago. O Método Sem Crise transforma o caos em protocolo — com ferramentas, frameworks e vocabulário técnico desenvolvidos a partir de casos reais.
+        </p>
+        <p>
+          A marca é a protagonista. O porta-voz, o instrumento. Nós somos o bastidor que define o resultado.
+        </p>
+        <a href="#produtos" class="btn-primary" style="display:inline-flex; margin-top:32px; font-size:14px; padding:12px 26px;">
+          Ver produtos e ferramentas
+        </a>
+      </div>
+      <div class="method-steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <div>
+            <div class="step-title">Prevenção</div>
+            <div class="step-body">Diagnóstico de vulnerabilidade de imagem. Identificar os riscos antes que se tornem manchetes — e construir protocolos antes de precisar deles.</div>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <div>
+            <div class="step-title">Resposta</div>
+            <div class="step-body">As primeiras 24–72 horas são decisivas. Controle de narrativa, nota oficial, briefing de porta-voz e gestão de stakeholders com precisão cirúrgica.</div>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <div>
+            <div class="step-title">Recuperação</div>
+            <div class="step-body">Pós-crise não é silêncio — é reconstrução ativa. Monitoramento de reputação, ajuste de posicionamento e reativação da narrativa de valor.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUTOS -->
+<section class="products" id="produtos">
+  <div class="container">
+    <p class="section-eyebrow">Produtos</p>
+    <h2 class="section-h2">Ferramentas para cada fase.</h2>
+    <p class="products-sub">Da prevenção à recuperação — materiais operacionais desenvolvidos por especialistas, acionáveis em 24–72 horas.</p>
+
+    <div class="products-grid">
+      <!-- Entrada -->
+      <div class="product-card">
+        <span class="product-tag tag-entry">Entrada</span>
+        <div class="product-title">Manual das Primeiras 24 Horas</div>
+        <div class="product-body">O que fazer hora a hora, quem acionar, o que nunca dizer. Inclui checklist imprimível e template de nota oficial em branco.</div>
+        <div class="product-price">R$ 47 <span>e-book + checklist</span></div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag tag-entry">Entrada</span>
+        <div class="product-title">50 Frases Proibidas do Porta-Voz</div>
+        <div class="product-body">As frases que destroem uma crise pela metade — e como reformular cada uma. Formato e-book curto com áudio narrado.</div>
+        <div class="product-price">R$ 27 <span>e-book + áudio</span></div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag tag-entry">Entrada</span>
+        <div class="product-title">Diagnóstico de Vulnerabilidade</div>
+        <div class="product-body">60 perguntas que sua empresa responde e recebe um score de risco reputacional. Formato questionário autoaplicável.</div>
+        <div class="product-price">R$ 67 <span>PDF editável</span></div>
+      </div>
+
+      <!-- Intermediário -->
+      <div class="product-card">
+        <span class="product-tag tag-mid">Essencial</span>
+        <div class="product-title">Protocolo Sem Crise</div>
+        <div class="product-body">Manual operacional completo + 15 templates editáveis. Árvore de decisão, matriz de stakeholders, scripts de coletiva, plano de comunicação interna.</div>
+        <div class="product-price">R$ 297 <span>manual + templates</span></div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag tag-mid">Essencial</span>
+        <div class="product-title">Biblioteca de Notas Oficiais</div>
+        <div class="product-body">40+ modelos editáveis cobrindo os cenários mais comuns: acidente de trabalho, vazamento de dados, demissão em massa, denúncia de assédio e mais.</div>
+        <div class="product-price">R$ 197 <span>40+ modelos .docx</span></div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag tag-mid">Essencial</span>
+        <div class="product-title">Gestão de Crise em Redes Sociais</div>
+        <div class="product-body">Como classificar uma polêmica, quando responder e quando ignorar, como lidar com perfis hostis. Banco de respostas-padrão incluído.</div>
+        <div class="product-price">R$ 247 <span>manual + banco de respostas</span></div>
+      </div>
+
+      <!-- Premium -->
+      <div class="product-card">
+        <span class="product-tag tag-prem">Premium</span>
+        <div class="product-title">Plano Sob Medida</div>
+        <div class="product-body">Você preenche um questionário detalhado e recebe um plano de gestão de crise personalizado para sua empresa em até 7 dias úteis.</div>
+        <div class="product-price">R$ 1.497 <span>entrega em 7 dias</span></div>
+      </div>
+      <div class="product-card" style="grid-column:span 2;">
+        <span class="product-tag tag-prem">Premium</span>
+        <div class="product-title">Clube Sem Crise</div>
+        <div class="product-body" style="max-width:600px;">Comunidade fechada para assessores e profissionais de comunicação. 2 materiais novos por mês + análise de caso recente do noticiário + acesso ao arquivo completo.</div>
+        <div style="display:flex; gap:24px; align-items:baseline; margin-top:8px;">
+          <div class="product-price">R$ 97 <span>/ mês</span></div>
+          <div style="font-size:13px; color:rgba(244,241,234,0.4);">ou R$ 897 / ano</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ISCA GRATUITA -->
+<section class="isca" id="gratuitos">
+  <div class="isca-inner">
+    <div>
+      <p class="section-eyebrow">Materiais gratuitos</p>
+      <h2 class="section-h2">Comece com o que você precisa agora.</h2>
+      <p style="margin-top:16px;">
+        Quatro ferramentas prontas para usar — sem cadastro, sem enrolação. Porque bom assessor entrega antes de cobrar.
+      </p>
+      <form class="isca-form" onsubmit="handleIsca(event)">
+        <input class="isca-input" type="email" placeholder="Seu melhor e-mail" required>
+        <button type="submit" class="btn-primary" style="flex-shrink:0; font-size:14px; padding:12px 24px;">
+          Quero os materiais
+        </button>
+      </form>
+      <div id="isca-confirm" style="display:none;" class="confirm-msg">
+        Enviado. Confira sua caixa de entrada em instantes.
+      </div>
+      <p style="font-size:11px; color:rgba(12,12,10,0.35); margin-top:10px;">Sem spam. Cancelamento a qualquer momento.</p>
+    </div>
+
+    <div class="isca-items">
+      <div class="isca-item">
+        <div class="isca-item-icon">✓</div>
+        <div>
+          <div class="isca-item-title">10 sinais de que sua empresa está prestes a entrar em crise</div>
+          <div class="isca-item-desc">Checklist de diagnóstico rápido — leitura de 3 minutos.</div>
+        </div>
+      </div>
+      <div class="isca-item">
+        <div class="isca-item-icon">✓</div>
+        <div>
+          <div class="isca-item-title">O que dizer nas primeiras 2 horas</div>
+          <div class="isca-item-desc">Versão resumida do manual completo. Acionável imediatamente.</div>
+        </div>
+      </div>
+      <div class="isca-item">
+        <div class="isca-item-icon">✓</div>
+        <div>
+          <div class="isca-item-title">Nota oficial em branco com as 7 seções obrigatórias</div>
+          <div class="isca-item-desc">Template editável em .docx. Funciona para qualquer tipo de crise.</div>
+        </div>
+      </div>
+      <div class="isca-item">
+        <div class="isca-item-icon">✓</div>
+        <div>
+          <div class="isca-item-title">Quiz: sua empresa está preparada?</div>
+          <div class="isca-item-desc">Teste de 5 minutos com score de risco reputacional.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTO -->
+<section class="testimonial">
+  <blockquote>
+    "Tínhamos 4 horas para responder. A Sem Crise estruturou a estratégia em 40 minutos. Sem eles, a cobertura teria sido catastrófica."
+  </blockquote>
+  <cite>Diretora de Comunicação — empresa do setor financeiro</cite>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter" id="newsletter">
+  <div class="newsletter-inner">
+    <p class="section-eyebrow">Newsletter semanal</p>
+    <h2 class="section-h2">Uma crise analisada por semana.</h2>
+    <p>Toda terça de manhã: análise de um caso real do noticiário + um princípio operacional + uma ferramenta prática. Leitura de 5 minutos.</p>
+    <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+      <input class="newsletter-input" type="email" placeholder="seu@email.com.br" required>
+      <button type="submit" class="btn-primary" style="flex-shrink:0; font-size:14px; padding:13px 26px;">Assinar</button>
+    </form>
+    <div id="nl-confirm" style="display:none;" class="confirm-msg">
+      Confirmado. Até terça-feira.
+    </div>
+    <p class="newsletter-note">Sem spam. Cada edição é um material que vale guardar.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <svg width="22" height="22" viewBox="0 0 60 60" fill="none">
+        <defs>
+          <linearGradient id="fg1" x1="30" y1="5" x2="30" y2="38" gradientUnits="userSpaceOnUse"><stop stop-color="#EB3F00"/><stop offset="1" stop-color="#EB3F00" stop-opacity="0"/></linearGradient>
+          <linearGradient id="fg2" x1="30" y1="-5" x2="30" y2="38" gradientUnits="userSpaceOnUse"><stop stop-color="#EB3F00"/><stop offset="1" stop-color="#EB3F00" stop-opacity="0"/></linearGradient>
+        </defs>
+        <circle cx="30" cy="30" r="10" stroke="url(#fg1)" stroke-width="1.5"/>
+        <circle cx="30" cy="30" r="22" stroke="url(#fg2)" stroke-width="1.5"/>
+        <circle cx="30" cy="30" r="4" fill="#EB3F00"/>
+      </svg>
+      <span class="footer-logo-text">Sem Crise</span>
+    </div>
+    <div class="footer-links">
+      <a href="#metodo" class="footer-link">Método</a>
+      <a href="#produtos" class="footer-link">Produtos</a>
+      <a href="#gratuitos" class="footer-link">Gratuitos</a>
+      <a href="#newsletter" class="footer-link">Newsletter</a>
+    </div>
+    <span class="footer-copy">© 2026 Sem Crise. Assessoria de Comunicação de Crise.</span>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Form handlers
+  function handleIsca(e) {
+    e.preventDefault();
+    e.target.style.display = 'none';
+    document.getElementById('isca-confirm').style.display = 'block';
+  }
+  function handleNewsletter(e) {
+    e.preventDefault();
+    e.target.style.display = 'none';
+    document.getElementById('nl-confirm').style.display = 'block';
+  }
+</script>
+</body>
+</html>

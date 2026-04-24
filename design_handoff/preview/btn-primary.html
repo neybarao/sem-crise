@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+
+<style id="brand-fonts">
+@font-face { font-family:'Lora'; src:url('../../fonts/Lora-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-style:normal; font-display:swap; }
+@font-face { font-family:'Lora'; src:url('../../fonts/Lora-Italic-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-style:italic; font-display:swap; }
+@font-face { font-family:'Geist'; src:url('../../fonts/Geist-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-style:normal; font-display:swap; }
+@font-face { font-family:'JetBrains Mono'; src:url('../../fonts/JetBrainsMono-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-style:normal; font-display:swap; }
+@font-face { font-family:'JetBrains Mono'; src:url('../../fonts/JetBrainsMono-Italic-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-style:italic; font-display:swap; }
+</style>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Geist', sans-serif; background: #EEE8DE; padding: 24px 28px; display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: 'Geist', sans-serif; font-weight: 500; font-size: 14px; letter-spacing: 0.01em; border-radius: 9999px; cursor: pointer; border: none; transition: all 200ms cubic-bezier(0.25,0,0.1,1); padding: 10px 22px; }
+  .btn-primary { background: #EB3F00; color: #F4F1EA; }
+  .btn-primary:hover { background: #C93500; }
+  .btn-primary:active { transform: scale(0.98); background: #B02E00; }
+  .btn-primary-dark { background: #EB3F00; color: #F4F1EA; }
+  .btn-secondary { background: transparent; color: #0C0C0A; border: 1.5px solid rgba(15,27,45,0.24); }
+  .btn-ghost { background: transparent; color: #0C0C0A; }
+  .btn-ghost:hover { background: rgba(15,27,45,0.06); }
+  .btn-sm { padding: 7px 16px; font-size: 12px; }
+  .btn-lg { padding: 14px 32px; font-size: 16px; }
+  .dark-row { background: #0F1B2D; padding: 16px; border-radius: 4px; display: flex; gap: 10px; align-items: center; width: 100%; }
+  .btn-on-dark { background: #EB3F00; color: #F4F1EA; }
+  .btn-outline-dark { background: transparent; color: #F4F1EA; border: 1.5px solid rgba(244,241,234,0.25); }
+  .btn-ghost-dark { background: transparent; color: rgba(244,241,234,0.7); }
+  .btn-ghost-dark:hover { background: rgba(244,241,234,0.08); color: #F4F1EA; }
+  .section-label { width: 100%; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(12,12,10,0.4); font-weight: 500; }
+</style>
+</head>
+<body>
+  <div class="section-label">Primary</div>
+  <button class="btn btn-primary btn-sm">Falar com especialista</button>
+  <button class="btn btn-primary">Falar com especialista</button>
+  <button class="btn btn-primary btn-lg">Falar com especialista</button>
+
+  <div class="section-label">Secondary & Ghost</div>
+  <button class="btn btn-secondary btn-sm">Saiba mais</button>
+  <button class="btn btn-secondary">Saiba mais</button>
+  <button class="btn btn-ghost">Ver casos →</button>
+
+  <div class="dark-row">
+    <button class="btn btn-on-dark">Iniciar avaliação</button>
+    <button class="btn btn-outline-dark">Saiba mais</button>
+    <button class="btn btn-ghost-dark">Ver casos →</button>
+  </div>
+</body>
+</html>

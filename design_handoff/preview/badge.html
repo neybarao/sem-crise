@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+
+<style id="brand-fonts">
+@font-face { font-family:'Lora'; src:url('../../fonts/Lora-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-style:normal; font-display:swap; }
+@font-face { font-family:'Lora'; src:url('../../fonts/Lora-Italic-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-style:italic; font-display:swap; }
+@font-face { font-family:'Geist'; src:url('../../fonts/Geist-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-style:normal; font-display:swap; }
+@font-face { font-family:'JetBrains Mono'; src:url('../../fonts/JetBrainsMono-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-style:normal; font-display:swap; }
+@font-face { font-family:'JetBrains Mono'; src:url('../../fonts/JetBrainsMono-Italic-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-style:italic; font-display:swap; }
+</style>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Geist', sans-serif; background: #EEE8DE; padding: 24px 28px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .badge { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 500; letter-spacing: 0.04em; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase; }
+  .badge-orange { background: rgba(235,63,0,0.1); color: #EB3F00; }
+  .badge-navy   { background: rgba(15,27,45,0.1); color: #0F1B2D; }
+  .badge-dark   { background: rgba(244,241,234,0.12); color: #F4F1EA; }
+  .badge-mostarda { background: rgba(232,173,59,0.15); color: #9B6A00; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .dark-strip { background: #0F1B2D; padding: 14px 16px; border-radius: 4px; width: 100%; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 4px; }
+</style>
+</head>
+<body>
+  <span class="badge badge-orange"><span class="dot"></span>Crise Ativa</span>
+  <span class="badge badge-orange">Urgente</span>
+  <span class="badge badge-navy">Assessoria</span>
+  <span class="badge badge-navy">Media Training</span>
+  <span class="badge badge-mostarda">Monitoramento</span>
+  <span class="badge" style="background:rgba(12,12,10,0.06);color:rgba(12,12,10,0.5);">Arquivado</span>
+
+  <div class="dark-strip">
+    <span class="badge badge-dark"><span class="dot"></span>Ao Vivo</span>
+    <span class="badge badge-dark">Confidencial</span>
+    <span class="badge badge-orange">Crise Ativa</span>
+  </div>
+</body>
+</html>

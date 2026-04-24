@@ -1,0 +1,13 @@
+export { Button } from './Button';
+export { Card } from './Card';
+export { Badge } from './Badge';
+export { Input } from './Input';
+export { Logo } from './Logo';
+export { Nav } from './Nav';
+export { Hero } from './Hero';
+export { Metodo } from './Metodo';
+export { Produtos } from './Produtos';
+export { Isca } from './Isca';
+export { Testimonial } from './Testimonial';
+export { Newsletter } from './Newsletter';
+export { Footer } from './Footer';

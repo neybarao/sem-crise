@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+
+<style id="brand-fonts">
+@font-face { font-family:'Lora'; src:url('../../fonts/Lora-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-style:normal; font-display:swap; }
+@font-face { font-family:'Lora'; src:url('../../fonts/Lora-Italic-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-style:italic; font-display:swap; }
+@font-face { font-family:'Geist'; src:url('../../fonts/Geist-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-style:normal; font-display:swap; }
+@font-face { font-family:'JetBrains Mono'; src:url('../../fonts/JetBrainsMono-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-style:normal; font-display:swap; }
+@font-face { font-family:'JetBrains Mono'; src:url('../../fonts/JetBrainsMono-Italic-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-style:italic; font-display:swap; }
+</style>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Geist', sans-serif; background: #EEE8DE; padding: 20px 24px; display: flex; gap: 20px; flex-wrap: wrap; }
+  .field { display: flex; flex-direction: column; gap: 5px; flex: 1; min-width: 160px; }
+  .field label { font-size: 11px; font-weight: 500; letter-spacing: 0.04em; color: rgba(12,12,10,0.6); text-transform: uppercase; }
+  .field input, .field select, .field textarea {
+    font-family: 'Geist', sans-serif;
+    font-size: 14px;
+    color: #0C0C0A;
+    background: #F4F1EA;
+    border: 1.5px solid rgba(15,27,45,0.18);
+    border-radius: 9999px;
+    padding: 9px 12px;
+    outline: none;
+    transition: border-color 200ms;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    border-color: #EB3F00;
+  }
+  .field input::placeholder { color: rgba(12,12,10,0.35); }
+  .field-error input { border-color: #EB3F00; }
+  .field-error .err { font-size: 11px; color: #EB3F00; margin-top: 2px; }
+  .field textarea { resize: none; height: 72px; border-radius: 16px; }
+</style>
+</head>
+<body>
+  <div class="field">
+    <label>Nome</label>
+    <input type="text" placeholder="Seu nome completo">
+  </div>
+  <div class="field field-error">
+    <label>E-mail</label>
+    <input type="email" value="nome@empresa" style="border-color:#EB3F00;">
+    <span class="err">Insira um e-mail válido.</span>
+  </div>
+  <div class="field">
+    <label>Situação</label>
+    <select><option>Selecione o tipo de crise</option><option>Reputacional</option><option>Operacional</option></select>
+  </div>
+  <div class="field" style="flex-basis:100%;">
+    <label>Mensagem</label>
+    <textarea placeholder="Descreva brevemente a situação..."></textarea>
+  </div>
+</body>
+</html>
