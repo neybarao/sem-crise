@@ -786,10 +786,6 @@ button {
     padding: 64px 20px;
   }
 
-  .products-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
 
   .products-sub {
     font-size: 15px;
@@ -1011,6 +1007,10 @@ button {
   .newsletter p {
     font-size: 15px;
     line-height: 1.7;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
   }
 
   .product-card {
