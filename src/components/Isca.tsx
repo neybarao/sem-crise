@@ -5,31 +5,26 @@ import { Input } from './Input';
 import { Button } from './Button';
 
 interface Resource {
-  icon: string;
   title: string;
   description: string;
 }
 
 const resources: Resource[] = [
   {
-    icon: '📋',
-    title: 'Guia de Crise',
-    description: 'Passo a passo para agir nos primeiros 24 horas de uma crise.',
+    title: '10 sinais de que sua empresa está prestes a entrar em crise',
+    description: 'Checklist de diagnóstico rápido — leitura de 3 minutos.',
   },
   {
-    icon: '🎯',
-    title: 'Checklist de Preparação',
-    description: 'Preparar sua empresa antes de qualquer problema surgir.',
+    title: 'O que dizer nas primeiras 2 horas',
+    description: 'Versão resumida do manual completo. Acionável imediatamente.',
   },
   {
-    icon: '📊',
-    title: 'Template de Comunicado',
-    description: 'Modelo pronto para comunicados à imprensa e stakeholders.',
+    title: 'Nota oficial em branco com as 7 seções obrigatórias',
+    description: 'Template editável em .docx. Funciona para qualquer tipo de crise.',
   },
   {
-    icon: '🎓',
-    title: 'Webinar Gratuito',
-    description: 'Sessão ao vivo com especialistas em comunicação de crise.',
+    title: 'Quiz: sua empresa está preparada?',
+    description: 'Teste de 5 minutos com score de risco reputacional.',
   },
 ];
 
@@ -39,7 +34,6 @@ export const Isca: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Integrate with MailerLite/Brevo API
     console.log('Email submitted:', email);
     setSubmitted(true);
     setTimeout(() => {
@@ -49,56 +43,63 @@ export const Isca: React.FC = () => {
   };
 
   return (
-    <section
-      id="gratuitos"
-      className="bg-creme py-20 md:py-32 px-14"
-    >
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Form */}
+    <section id="gratuitos" className="bg-creme py-20 md:py-26 px-6 sm:px-14">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-16 items-start">
+          {/* Form Section */}
           <div>
-            <h2 className="font-display font-semibold text-4xl md:text-5xl text-grafite mb-4 leading-tight">
-              Recursos gratuitos
+            <p className="text-xs font-medium text-laranja uppercase mb-4 tracking-widest">
+              Materiais gratuitos
+            </p>
+            <h2 className="font-display font-semibold text-3xl sm:text-4xl md:text-5xl text-grafite mb-4 leading-tight max-w-xs">
+              Comece com o que você precisa agora.
             </h2>
-            <p className="text-base md:text-lg text-opacity-58 text-grafite leading-relaxed mb-8">
-              Baixe nossos guias e ferramentas para começar a se preparar ainda hoje.
+            <p className="text-sm sm:text-base text-opacity-60 text-grafite leading-relaxed mb-8 max-w-sm">
+              Quatro ferramentas prontas para usar — sem cadastro, sem enrolação. Porque bom assessor entrega antes de cobrar.
             </p>
 
             {!submitted ? (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 mb-3">
                 <Input
                   type="email"
-                  placeholder="seu@email.com"
-                  variant="light"
+                  placeholder="Seu melhor e-mail"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1 text-sm"
                   required
                 />
-                <Button type="submit" variant="primary" className="w-full md:w-auto">
-                  Acessar recursos
+                <Button type="submit" variant="primary" size="sm" className="flex-shrink-0">
+                  Quero os materiais
                 </Button>
               </form>
             ) : (
-              <div className="bg-laranja bg-opacity-10 border border-laranja border-opacity-40 rounded-lg p-4 text-laranja">
-                ✓ Verifique seu email para acessar os recursos!
+              <div className="text-laranja font-display font-italic text-base mb-3">
+                Enviado. Confira sua caixa de entrada em instantes.
               </div>
             )}
+            <p className="text-xs text-opacity-35 text-grafite">
+              Sem spam. Cancelamento a qualquer momento.
+            </p>
           </div>
 
           {/* Resources Grid */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="flex flex-col gap-3">
             {resources.map((resource, index) => (
               <div
                 key={index}
-                className="bg-off-white rounded-md p-6 hover:shadow-md transition-shadow duration-normal ease-smooth"
+                className="bg-off-white rounded-md p-4 sm:p-4 shadow-sm"
               >
-                <div className="text-3xl mb-3">{resource.icon}</div>
-                <h3 className="font-display font-semibold text-base text-grafite mb-2">
-                  {resource.title}
-                </h3>
-                <p className="text-xs text-opacity-58 text-grafite leading-relaxed">
-                  {resource.description}
-                </p>
+                <div className="flex gap-3">
+                  <div className="text-laranja font-semibold flex-shrink-0">✓</div>
+                  <div>
+                    <h3 className="font-semibold text-xs sm:text-sm text-grafite mb-1">
+                      {resource.title}
+                    </h3>
+                    <p className="text-xs text-opacity-50 text-grafite leading-snug">
+                      {resource.description}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

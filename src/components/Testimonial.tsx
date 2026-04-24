@@ -6,13 +6,12 @@ export const Testimonial: React.FC = () => {
       id="sobre"
       className="bg-navy py-20 md:py-32 px-14"
     >
-      <div className="max-w-2xl mx-auto text-center">
-        <blockquote className="font-display italic text-2xl md:text-4xl text-off-white leading-relaxed mb-8">
-          &ldquo;A Sem Crise não apenas nos ajudou a gerenciar a crise, mas transformou
-          como nossa empresa se comunica com o mercado. Mais confiante, mais preparada.&rdquo;
+      <div className="max-w-2xl mx-auto text-center px-6 sm:px-0">
+        <blockquote className="font-display italic text-xl sm:text-2xl md:text-3xl text-off-white leading-snug mb-7">
+          &ldquo;Tínhamos 4 horas para responder. A Sem Crise estruturou a estratégia em 40 minutos. Sem eles, a cobertura teria sido catastrófica.&rdquo;
         </blockquote>
-        <cite className="text-sm font-medium text-opacity-40 text-off-white uppercase tracking-wide not-italic">
-          &mdash; CEO, Empresa Fortune 500
+        <cite className="text-xs font-medium text-opacity-40 text-off-white uppercase tracking-widest not-italic">
+          Diretora de Comunicação — empresa do setor financeiro
         </cite>
       </div>
     </section>

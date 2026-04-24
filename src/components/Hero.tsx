@@ -7,9 +7,9 @@ interface HeroStat {
 }
 
 const stats: HeroStat[] = [
-  { number: '500+', label: 'Clientes atendidos' },
-  { number: '20+', label: 'Anos de experiência' },
-  { number: '24h', label: 'Resposta em crise' },
+  { number: '+200', label: 'Crises gerenciadas' },
+  { number: '24h', label: 'Disponibilidade total' },
+  { number: '98%', label: 'Reputações preservadas' },
 ];
 
 export const Hero: React.FC = () => {
@@ -59,40 +59,47 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-2xl">
+      <div className="relative z-10 max-w-3xl px-6 sm:px-0">
         {/* Eyebrow */}
-        <div className="text-xs font-medium letter-spacing-wide text-laranja uppercase mb-4 tracking-widest">
-          Comunicação estratégica
-        </div>
+        <p className="text-xs font-medium text-laranja uppercase mb-7 tracking-widest">
+          Assessoria de Comunicação de Crise
+        </p>
 
         {/* Heading */}
-        <h1 className="font-display font-semibold text-4xl md:text-6xl lg:text-7xl text-off-white leading-tight mb-2 -tracking-wide">
-          Transforme suas crises
-        </h1>
-        <h1 className="font-display font-semibold text-4xl md:text-6xl lg:text-7xl text-opacity-32 text-off-white leading-tight mb-8 -tracking-wide">
-          em oportunidades
+        <h1 className="font-display font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-off-white leading-tight mb-2 -tracking-wider">
+          A crise é inevitável.
+          <br />
+          <span className="text-opacity-32">O estrago, não.</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="text-base md:text-lg text-opacity-58 text-off-white leading-relaxed max-w-md mb-8">
-          Assessoria especializada em comunicação de crise para empresas que querem proteger sua reputação e fortalecer a confiança de seus stakeholders.
+        <p className="text-base sm:text-lg md:text-xl text-opacity-58 text-off-white leading-relaxed max-w-xl my-7">
+          Estratégia, velocidade e controle de narrativa para proteger sua imagem quando mais importa. Feito por quem já esteve na sala de guerra.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 mb-20">
-          <Button variant="primary">Solicitar proposta</Button>
-          <Button variant="ghost">Ver metodologia</Button>
+        <div className="flex flex-col xs:flex-row gap-3 mb-20">
+          <a href="#gratuitos">
+            <Button variant="primary" className="w-full xs:w-auto">
+              Receber material gratuito
+            </Button>
+          </a>
+          <a href="#metodo">
+            <Button variant="ghost" className="w-full xs:w-auto">
+              Conhecer o método
+            </Button>
+          </a>
         </div>
       </div>
 
       {/* Stats Strip */}
-      <div className="relative z-10 grid grid-cols-3 gap-8 border-t border-opacity-7 border-off-white pt-8">
+      <div className="relative z-10 grid grid-cols-3 gap-8 sm:gap-14 border-t border-opacity-7 border-off-white pt-9 px-6 sm:px-0">
         {stats.map((stat, index) => (
-          <div key={index} className="py-4">
-            <div className="font-display font-semibold text-3xl md:text-4xl text-off-white mb-2">
+          <div key={index}>
+            <div className="font-display font-semibold text-2xl sm:text-3xl text-off-white mb-1">
               {stat.number}
             </div>
-            <div className="text-xs md:text-sm text-opacity-40 text-off-white">
+            <div className="text-xs text-opacity-40 text-off-white leading-tight">
               {stat.label}
             </div>
           </div>

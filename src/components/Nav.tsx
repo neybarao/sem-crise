@@ -8,7 +8,7 @@ const navLinks = [
   { href: '#metodo', label: 'Método' },
   { href: '#produtos', label: 'Produtos' },
   { href: '#gratuitos', label: 'Gratuitos' },
-  { href: '#sobre', label: 'Sobre' },
+  { href: '#newsletter', label: 'Newsletter' },
 ];
 
 export const Nav: React.FC = () => {
@@ -59,9 +59,15 @@ export const Nav: React.FC = () => {
       </div>
 
       {/* CTA Button */}
-      <Button variant="primary" size="sm" className="hidden sm:block">
-        Fale conosco
-      </Button>
+      <a
+        href="#newsletter"
+        onClick={(e) => handleNavClick(e, '#newsletter')}
+        className="hidden sm:block"
+      >
+        <Button variant="primary" size="sm">
+          Começar agora
+        </Button>
+      </a>
     </nav>
   );
 };

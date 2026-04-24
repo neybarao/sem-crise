@@ -20,34 +20,40 @@ export const Newsletter: React.FC = () => {
   };
 
   return (
-    <section className="bg-off-white py-20 md:py-32 px-14">
-      <div className="max-w-md mx-auto text-center">
-        <h2 className="font-display font-semibold text-3xl md:text-4xl text-grafite mb-4 leading-tight">
-          Fique por dentro
+    <section id="newsletter" className="bg-off-white py-20 md:py-26 px-6 sm:px-14">
+      <div className="max-w-lg mx-auto text-center">
+        <p className="text-xs font-medium text-laranja uppercase mb-4 tracking-widest">
+          Newsletter semanal
+        </p>
+        <h2 className="font-display font-semibold text-3xl sm:text-4xl md:text-5xl text-grafite mb-4 leading-tight">
+          Uma crise analisada por semana.
         </h2>
-        <p className="text-base text-opacity-58 text-grafite mb-8 leading-relaxed">
-          Receba insights e tendências sobre comunicação de crise direto na sua caixa de entrada.
+        <p className="text-sm sm:text-base text-opacity-55 text-grafite mb-8 leading-relaxed">
+          Toda terça de manhã: análise de um caso real do noticiário + um princípio operacional + uma ferramenta prática. Leitura de 5 minutos.
         </p>
 
         {!submitted ? (
-          <form onSubmit={handleSubmit} className="space-y-3">
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 mb-3">
             <Input
               type="email"
-              placeholder="seu@email.com"
-              variant="light"
+              placeholder="seu@email.com.br"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className="flex-1 text-sm"
               required
             />
-            <Button type="submit" variant="primary" className="w-full">
-              Inscrever-se
+            <Button type="submit" variant="primary" size="sm" className="flex-shrink-0">
+              Assinar
             </Button>
           </form>
         ) : (
-          <div className="bg-laranja bg-opacity-10 border border-laranja border-opacity-40 rounded-lg p-4 text-laranja text-sm">
-            ✓ Obrigado! Verifique seu email de confirmação.
+          <div className="font-display font-italic text-laranja text-base mb-3">
+            Confirmado. Até terça-feira.
           </div>
         )}
+        <p className="text-xs text-opacity-35 text-grafite">
+          Sem spam. Cada edição é um material que vale guardar.
+        </p>
       </div>
     </section>
   );

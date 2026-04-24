@@ -10,18 +10,18 @@ interface Step {
 const steps: Step[] = [
   {
     number: '01',
-    title: 'Diagnóstico',
-    description: 'Análise profunda da situação de crise, identificando stakeholders impactados, riscos e oportunidades de comunicação.',
+    title: 'Prevenção',
+    description: 'Diagnóstico de vulnerabilidade de imagem. Identificar os riscos antes que se tornem manchetes — e construir protocolos antes de precisar deles.',
   },
   {
     number: '02',
-    title: 'Estratégia',
-    description: 'Desenvolvimento de plano de comunicação integrado, com mensagens-chave, timing e canais apropriados.',
+    title: 'Resposta',
+    description: 'As primeiras 24–72 horas são decisivas. Controle de narrativa, nota oficial, briefing de porta-voz e gestão de stakeholders com precisão cirúrgica.',
   },
   {
     number: '03',
-    title: 'Implementação',
-    description: 'Execução coordenada da estratégia, gerenciamento de mídia e stakeholders, monitoramento contínuo.',
+    title: 'Recuperação',
+    description: 'Pós-crise não é silêncio — é reconstrução ativa. Monitoramento de reputação, ajuste de posicionamento e reativação da narrativa de valor.',
   },
 ];
 
@@ -31,39 +31,47 @@ export const Metodo: React.FC = () => {
       id="metodo"
       className="bg-off-white py-20 md:py-32 px-14"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto px-6 sm:px-0">
         {/* Header */}
-        <div className="grid md:grid-cols-2 gap-12 items-start mb-16">
+        <div className="grid md:grid-cols-2 gap-16 items-start mb-0">
           <div>
-            <h2 className="font-display font-semibold text-4xl md:text-5xl text-grafite mb-4 leading-tight">
-              Nossa metodologia
-            </h2>
-            <p className="text-base md:text-lg text-opacity-58 text-grafite leading-relaxed mb-8">
-              Um processo comprovado e eficaz para transformar crises em oportunidades de fortalecimento institucional.
+            <p className="text-xs font-medium text-laranja uppercase mb-4 tracking-widest">
+              O Método Sem Crise
             </p>
-            <Button variant="primary">Saiba mais</Button>
+            <h2 className="font-display font-semibold text-3xl sm:text-4xl md:text-5xl text-grafite mb-5 leading-tight max-w-xs">
+              Protocolo antes do pânico.
+            </h2>
+            <p className="text-sm sm:text-base text-opacity-62 text-grafite leading-relaxed mb-4 max-w-sm">
+              Em crise, improvisar é o pior erro. Cada resposta precipitada aprofunda o estrago. O Método Sem Crise transforma o caos em protocolo — com ferramentas, frameworks e vocabulário técnico desenvolvidos a partir de casos reais.
+            </p>
+            <p className="text-sm sm:text-base text-opacity-62 text-grafite leading-relaxed mb-8 max-w-sm">
+              A marca é a protagonista. O porta-voz, o instrumento. Nós somos o bastidor que define o resultado.
+            </p>
+            <a href="#produtos">
+              <Button variant="primary" className="text-sm py-3 px-6">
+                Ver produtos e ferramentas
+              </Button>
+            </a>
           </div>
 
           {/* Steps */}
-          <div className="space-y-8">
+          <div className="space-y-0">
             {steps.map((step, index) => (
               <div
                 key={index}
-                className={`pb-8 ${
-                  index < steps.length - 1
-                    ? 'border-b border-opacity-7 border-grafite'
-                    : ''
-                }`}
+                className="flex gap-6 py-7 border-b border-opacity-7 border-grafite first:border-t"
               >
-                <div className="text-xs font-semibold text-laranja uppercase tracking-widest mb-2">
+                <div className="text-sm font-semibold text-laranja flex-shrink-0 pt-0.5 min-w-8">
                   {step.number}
                 </div>
-                <h3 className="font-display font-semibold text-lg md:text-xl text-grafite mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-sm md:text-base text-opacity-58 text-grafite leading-relaxed">
-                  {step.description}
-                </p>
+                <div>
+                  <h3 className="font-display font-semibold text-base sm:text-lg text-grafite mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-opacity-58 text-grafite leading-snug">
+                    {step.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
