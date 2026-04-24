@@ -19,18 +19,20 @@ export const Isca: React.FC = () => {
           <p style={{ marginTop: '16px' }}>
             Quatro ferramentas prontas para usar — sem cadastro, sem enrolação. Porque bom assessor entrega antes de cobrar.
           </p>
-          {formVisible ? (
-            <form className="isca-form" onSubmit={handleIsca}>
-              <input className="isca-input" type="email" placeholder="Seu melhor e-mail" required/>
-              <button type="submit" className="btn-primary" style={{ flexShrink: 0, fontSize: '14px', padding: '12px 24px' }}>
-                Quero os materiais
-              </button>
-            </form>
-          ) : (
-            <div id="isca-confirm" className="confirm-msg">
-              Enviado. Confira sua caixa de entrada em instantes.
-            </div>
-          )}
+          <div suppressHydrationWarning>
+            {formVisible ? (
+              <form className="isca-form" onSubmit={handleIsca}>
+                <input className="isca-input" type="email" placeholder="Seu melhor e-mail" required/>
+                <button type="submit" className="btn-primary" style={{ flexShrink: 0, fontSize: '14px', padding: '12px 24px' }}>
+                  Quero os materiais
+                </button>
+              </form>
+            ) : (
+              <div id="isca-confirm" className="confirm-msg">
+                Enviado. Confira sua caixa de entrada em instantes.
+              </div>
+            )}
+          </div>
           <p style={{ fontSize: '11px', color: 'rgba(12,12,10,0.35)', marginTop: '10px' }}>Sem spam. Cancelamento a qualquer momento.</p>
         </div>
 

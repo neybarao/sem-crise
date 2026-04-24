@@ -49,6 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
+      suppressHydrationWarning
       className={`${lora.variable} ${geist.variable} ${jetbrainsMono.variable}`}
     >
       <head>
