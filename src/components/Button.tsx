@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import { motion } from 'framer-motion';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'ghost';
@@ -8,11 +11,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ variant = 'primary', size = 'md', className = '', ...props }, ref) => {
-    const baseStyles = 'font-medium rounded-full transition-all duration-normal ease-smooth active:scale-97 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-laranja';
+    const baseStyles = 'font-medium rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-laranja';
 
     const variantStyles = {
-      primary: 'bg-laranja text-off-white hover:bg-laranja-hover disabled:opacity-50 disabled:cursor-not-allowed',
-      ghost: 'border border-opacity-18 border-off-white text-off-white hover:border-opacity-65 hover:text-off-white disabled:opacity-50 disabled:cursor-not-allowed',
+      primary: 'bg-laranja text-off-white disabled:opacity-50 disabled:cursor-not-allowed',
+      ghost: 'border border-opacity-18 border-off-white text-off-white disabled:opacity-50 disabled:cursor-not-allowed',
     };
 
     const sizeStyles = {
@@ -22,10 +25,13 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     };
 
     return (
-      <button
-        ref={ref}
+      <motion.button
+        ref={ref as any}
         className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
-        {...props}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.97 }}
+        transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+        {...(props as any)}
       />
     );
   }
